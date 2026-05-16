@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor HTML para LaTeX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conversor HTML para LaTeX</h1>
+
+    <p>Digite um trecho simples em HTML:</p>
+
+    <textarea id="entrada" rows="10" cols="70"><p>Olá <b>mundo</b></p>
+<ul>
+<li>Item normal</li>
+<li><i>Item em italico</i></li>
+</ul></textarea>
+
+    <br><br>
+
+    <button onclick="executar()">Converter</button>
+    <button onclick="limpar()">Limpar</button>
+
+    <h2>Resultado em LaTeX:</h2>
+    <pre id="saida"></pre>
+
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>

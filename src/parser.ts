@@ -40,6 +40,7 @@ export function converter(html: string): string {
     resultado = "\\documentclass{article}\n";
     resultado += "\\usepackage[utf8]{inputenc}\n";
     resultado += "\\usepackage[T1]{fontenc}\n";
+    resultado += "\\usepackage{graphicx}\n";
     resultado += "\\begin{document}\n\n";
 
     while (i < html.length) {
@@ -51,7 +52,7 @@ export function converter(html: string): string {
                 tag += html[j];
                 j++;
             }
-
+            let tagCompleta = tag;
             tag = limparTag(tag);
 
             if (j >= html.length) {
@@ -139,6 +140,23 @@ export function converter(html: string): string {
                 resultado += "}\n";
                 pilha.pop();
             }
+
+            else if (tag === "img") {
+
+                let inicioSrc = tagCompleta.indexOf('src="');
+
+                if (inicioSrc !== -1) {
+
+                    inicioSrc += 5;
+
+                    let fimSrc = tagCompleta.indexOf('"', inicioSrc);
+
+                    let caminho = tagCompleta.substring(inicioSrc, fimSrc);
+
+                    resultado += "\\includegraphics{" + caminho + "}\n";
+                }
+            }
+
             else if (tag === "h2") {
                 resultado += "\\subsection{";
                 pilha.push("h2");
@@ -166,6 +184,6 @@ export function converter(html: string): string {
 
     // Adiciona final do documento
     resultado += "\n\\end{document}";
-    
+
     return resultado.trim();
 }

@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\begin{document}
+
+\section{Conversor HTML para LaTeX}
+ \subsection{Resumo Acadêmico}
+  Este projeto apresenta o desenvolvimento de um \textbf{parser} capaz de converter estruturas básicas da linguagem HTML para comandos equivalentes em LaTeX. O sistema foi desenvolvido utilizando a linguagem TypeScript e estruturas de dados fundamentais, com destaque para o uso de \textit{pilha} no controle hierárquico de abertura e fechamento de tags. 
+
+  O objetivo principal do projeto consiste em demonstrar conceitos relacionados a parsing, hierarquia de linguagens de marcação e transformação de estruturas textuais, aplicando conhecimentos de Estrutura de Dados e lógica computacional. 
+
+ \includegraphics{latex_logo.svg}
+ \subsection{Principais Funcionalidades}
+ \begin{itemize}
+ \item Conversão de títulos HTML para comandos LaTeX
+ \item Conversão de listas ordenadas e não ordenadas
+ \item Conversão de texto em negrito e itálico
+ \item Controle hierárquico utilizando pilha
+ \item Validação de erros de sintaxe
+ \item Suporte básico para imagens
+ \end{itemize}
+ \subsection{Funcionamento do Parser}
+  O parser percorre o código HTML caractere por caractere, identificando tags de abertura e fechamento. Durante o processamento, a estrutura de dados do tipo pilha é utilizada para validar a consistência hierárquica do documento, garantindo que a última tag aberta seja a primeira a ser fechada. 
+
+ \subsection{Autores}
+ \textbf{Jocélio Gomes da Silva}
+
+ \textbf{Ricardo Ladeira}
+
+ \textbf{Larissa}
+
+ \subsection{Professor Orientador}
+ \textbf{Fabricio Galante}
+
+
+\end{document}
